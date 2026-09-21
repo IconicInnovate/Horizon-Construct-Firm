@@ -97,7 +97,7 @@ Fill these before this brief goes anywhere client-facing: **===============Devel
 
 ## Recommended Next Steps
 
-1. **Ship a one-page site.** Portfolio, services, contact form. The Facebook page is doing work a landing page should be doing.
+1. **Ship a multi-page site.** Portfolio, services, contact form. The Facebook page is doing work a landing page should be doing.
 2. **Convert the hostel work into a named vertical.** Ten hostels in two years is a genuine specialism and the clearest differentiator available — lead with it rather than burying it among generic residential posts.
 3. **Publish 2–3 proper case studies.** Brief → constraint → design response → built outcome, with cost and programme where the client permits. Renders alone don't prove delivery.
 4. **Standardise the project post format** across channels so the portfolio reads as a body of work, not a feed.
