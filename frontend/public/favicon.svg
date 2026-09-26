@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="100%" height="100%">
+  <!-- Background Badge for High Contrast in Light & Dark Browser Themes -->
+  <rect width="64" height="64" rx="16" fill="#0f172a"/>
+  
+  <!-- Centered Horizon Construct Building Symbol with Internal Padding -->
+  <g transform="translate(12, 12)" stroke="#38bdf8" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <rect width="26" height="32" x="7" y="4" rx="3" ry="3"/>
+    <path d="M15 36v-6h10v6"/>
+    <path d="M14 11h.01"/>
+    <path d="M26 11h.01"/>
+    <path d="M20 11h.01"/>
+    <path d="M20 17h.01"/>
+    <path d="M20 23h.01"/>
+    <path d="M26 17h.01"/>
+    <path d="M26 23h.01"/>
+    <path d="M14 17h.01"/>
+    <path d="M14 23h.01"/>
+  </g>
+</svg>
