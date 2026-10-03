@@ -1,8 +1,6 @@
 from django.db import models
 
 # Create your models here.
-from django.db import models
-
 
 class Service(models.Model):
     title = models.CharField(max_length=200)
@@ -14,20 +12,36 @@ class Service(models.Model):
 
 
 class Project(models.Model):
-    PROJECT_TYPES = [
-        ("hostel", "Hostel"),
-        ("duplex", "Duplex"),
-        ("bungalow", "Bungalow"),
-        ("other", "Other"),
+    CATEGORY_CHOICES = [
+        ("residential", "Residential"),
+        ("commercial", "Commercial"),
+        ("renovation", "Renovation"),
+    ]
+
+    STATUS_CHOICES = [
+        ("completed", "Completed"),
+        ("ongoing", "Ongoing"),
+        ("design_concept", "Design Concept"),
     ]
 
     title = models.CharField(max_length=200)
-    project_type = models.CharField(
+    category = models.CharField(
         max_length=20,
-        choices=PROJECT_TYPES,
+        choices=CATEGORY_CHOICES,
+        default="residential",
+    )
+    status = models.CharField(
+        max_length=20,
+        choices=STATUS_CHOICES,
+        default="design_concept",
     )
     description = models.TextField()
     location = models.CharField(max_length=200, blank=True)
+    plot_size = models.CharField(max_length=100, blank=True)
+    features = models.TextField(
+        blank=True,
+        help_text="Enter project features, one per line.",
+    )
     year = models.PositiveIntegerField(null=True, blank=True)
     featured = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -70,11 +84,26 @@ class ContactMessage(models.Model):
 
 
 class QuoteRequest(models.Model):
+    PROJECT_TYPES = [
+        ("design", "Design"),
+        ("construction", "Construction"),
+        ("renovation", "Renovation"),
+        ("advisory", "Advisory"),
+        ("facility_management", "Facility Management"),
+        ("property_trading", "Property Trading"),
+    ]
+
     name = models.CharField(max_length=200)
-    email = models.EmailField()
-    phone = models.CharField(max_length=30, blank=True)
-    project_type = models.CharField(max_length=200)
-    description = models.TextField()
+    phone = models.CharField(max_length=30)
+    email = models.EmailField(blank=True)
+    project_type = models.CharField(
+        max_length=30,
+        choices=PROJECT_TYPES,
+    )
+    location = models.CharField(max_length=200, blank=True)
+    plot_size = models.CharField(max_length=100, blank=True)
+    budget_range = models.CharField(max_length=100, blank=True)
+    message = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

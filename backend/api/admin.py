@@ -17,10 +17,9 @@ class ServiceAdmin(admin.ModelAdmin):
 
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
-    list_display = ("title", "project_type", "location", "year", "featured")
-    list_filter = ("project_type", "featured")
-    search_fields = ("title", "location")
-
+    list_display = ("title", "category", "status", "location", "featured")
+    list_filter = ("category", "status", "featured")
+    search_fields = ("title", "location", "description")
 
 @admin.register(ProjectImage)
 class ProjectImageAdmin(admin.ModelAdmin):
@@ -43,6 +42,13 @@ class ContactMessageAdmin(admin.ModelAdmin):
 
 @admin.register(QuoteRequest)
 class QuoteRequestAdmin(admin.ModelAdmin):
-    list_display = ("name", "email", "phone", "project_type", "created_at")
-    search_fields = ("name", "email", "phone", "project_type")
-    readonly_fields = ("created_at",)
+    list_display = (
+        "name",
+        "phone",
+        "project_type",
+        "location",
+        "budget_range",
+        "created_at",
+    )
+    list_filter = ("project_type", "created_at")
+    search_fields = ("name", "phone", "email", "location", "message")
