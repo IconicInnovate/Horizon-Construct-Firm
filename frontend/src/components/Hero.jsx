@@ -1,6 +1,6 @@
 import React from 'react';
-import { ArrowRight, ShieldCheck } from 'lucide-react';
 
+import { ArrowRight, ShieldCheck } from 'lucide-react';
 export default function Hero() {
     return (
         <section className="relative bg-slate-900 text-white py-24 md:py-32">
