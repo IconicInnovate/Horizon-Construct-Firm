@@ -133,3 +133,42 @@ Fill these before this brief goes anywhere client-facing: **===============Devel
 ---
 
 _Compiled from publicly available Facebook and LinkedIn material. Figures are as stated by the firm and have not been independently verified. Everything under "Known Gaps" is unconfirmed and should be supplied by the firm before publication._
+
+## Running the project locally
+
+You need Python 3 and Node.js installed.
+
+### 1. Backend (Django)
+
+```powershell
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+pip install -r backend\requirements.txt
+cd backend
+python manage.py migrate
+python manage.py createsuperuser
+python manage.py runserver
+```
+
+The API runs at http://127.0.0.1:8000/api/ and the admin at http://127.0.0.1:8000/admin/.
+
+Add services and projects in the admin. Until the database has content, the website shows built-in sample content.
+
+### 2. Frontend (React + Vite)
+
+Open a second terminal:
+
+```powershell
+cd frontend
+npm install
+npm run dev
+```
+
+The site runs at http://localhost:5173/. The Vite dev server forwards `/api` and `/media` requests to Django, so both servers must be running.
+
+### API endpoints
+
+- `GET /api/services/`
+- `GET /api/projects/` (optional `?category=` and `?status=` filters)
+- `POST /api/contact/`
+- `POST /api/quote-requests/`
