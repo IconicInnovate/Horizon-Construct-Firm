@@ -47,6 +47,33 @@ Drawn from the firm's own published project posts:
 
 ---
 
+## Run the Frontend
+
+The frontend is a Vite and React application located in the `frontend` directory.
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Open the local URL shown in the terminal, usually `http://localhost:5173`.
+
+To create and preview a production build:
+
+```bash
+npm run build
+npm run preview
+```
+
+To run the linter:
+
+```bash
+npm run lint
+```
+
+---
+
 ## Typical Engagement Flow
 
 ```
