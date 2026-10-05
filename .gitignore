@@ -18,3 +18,10 @@ db.sqlite3
 # OS files
 .DS_Store
 Thumbs.db
+
+# Node
+node_modules/
+dist/
+
+# Uploaded files
+backend/media/
