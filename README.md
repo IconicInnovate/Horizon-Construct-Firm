@@ -1,49 +1,55 @@
-# Horizon Construct Firm
+# Horizon Construct Firm — Development Brief & Website UI/UX Design
 
-> A design-and-build practice that turns a client's brief into a standing building.
-
-**Location:** Osogbo, Osun State, Nigeria
-**Sector:** Architecture · Design & Build · Construction Supervision
-**Status:** Active — `v1.0` (social-first, no website yet)
+> **Purpose of this document:** This is the single source of truth for the UI/UX Designer and Developer working on the Horizon Construct Firm website. It defines who the client is, what the site needs to do, what it should look and feel like, what pages/features are in scope, and what "done" looks like for each role.
 
 ---
 
-## Overview
+## 1. Project Snapshot
 
-Horizon Construct Firm is a Nigerian design and construction outfit based in Osogbo. It presents itself publicly as a **design-and-build** practice rather than a pure architecture studio or a pure contractor — the firm authors the design and then supervises the build through to handover.
+|                             |                                                                                                              |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| **Client**                  | Horizon Construct Firm                                                                                       |
+| **Industry**                | Design & Build / Construction, Architecture, Real Estate Services                                            |
+| **Tagline**                 | "Excellence encapsulated in expertise…"                                                                      |
+| **Location**                | Nigeria (Osogbo, Osun State)                                                                                 |
+| **Primary contact channel** | WhatsApp — +234 703 499 7609                                                                                 |
+| **Social handles**          | Instagram: `horizonconstruct_firm` · Facebook: `Horizon Construct Firm` · LinkedIn: `Horizon Construct Firm` |
+| **Project type**            | Marketing / lead-generation website (Phase 1). Portfolio                                                     |
 
-Its stated specialisation is the _brief itself_: creating and interpreting what a client asks for, then translating that into a constructed result. Most of its visible output is residential and student-accommodation work in the Nigerian private market.
-
----
-
-## Core Services
-
-| Service                      | What it covers                                                                     |
-| ---------------------------- | ---------------------------------------------------------------------------------- |
-| **Architectural Design**     | Residential and hostel schemes — plans, space programming, contemporary elevations |
-| **Structural Design**        | Structural drawings issued alongside architectural sets                            |
-| **Brief Development**        | Working with clients to define and refine requirements before design begins        |
-| **Construction Supervision** | On-site oversight through the build phase                                          |
-| **Design & Build Delivery**  | End-to-end: concept → drawings → construction                                      |
+**One-line brief:** Horizon Construct Firm is a design-and-build firm that turns clients' briefs into real, built structures. The website's job is to make that promise credible at first glance — through strong project photography/renders, a clear service offering, and a frictionless path to "Talk to us on WhatsApp."
 
 ---
 
-## Portfolio Highlights
+## 2. About the Business
 
-Drawn from the firm's own published project posts:
+Horizon Construct Firm positions itself as a full-lifecycle property partner, not just a contractor. Services as provided by the client:
 
-- **Private hostels** — the strongest track record. Close to **ten private hostels** designed and supervised in Nigeria over a roughly two-year stretch. Example scheme: a **20-room hostel, two units on a 100ft × 100ft plot**. The firm frames hostel work around occupant behaviour and how users interact within shared space.
-- **5-Bedroom Duplex** — on 1½ plots. Ante-room, living room, family lounge, visitor's WC, all-ensuite bedrooms, gym, laundry.
-- **4-Bedroom Bungalow** — ante-room, living room, visitor's WC, dining, kitchen, store, laundry, all-ensuite bedrooms.
+- **Design** — architectural design and 3D visualization (residential and commercial)
+- **Construction** — build execution, from foundation to finishing
+- **Renovation** — upgrades and remodeling of existing structures
+- **Property Trading** — buying/selling of property
+- **Advisory Services** — consultancy on property/construction decisions
+- **Facility Management** — post-handover maintenance and management
 
-**Recurring design language:** contemporary/modern residential, ensuite-standard bedrooms, clear separation of guest and family zones (the ante-room + visitor's WC pattern appears across schemes).
+**Note/assumption:** Design renders supplied are watermarked "Arcphil — 07034997609," the same WhatsApp number used by Horizon Construct Firm. This suggests Arcphil is either an in-house design arm/architect or a close design partner of the firm. **Open question for client:** should Arcphil be credited/branded separately on the site (e.g., "Design by Arcphil, a Horizon Construct Firm studio"), or folded entirely into the Horizon Construct Firm brand? Flag this before final copywriting.
 
 ---
 
-## Tooling
+## 3. Business Goals (why we're building this)
 
-- **Autodesk Revit** — primary BIM/documentation tool, referenced directly in project posts
-- Structural documentation produced in-house alongside architectural sets
+1. **Build credibility fast** — a visitor should believe within 5 seconds that this is a real, capable firm, not a "WhatsApp business."
+2. **Generate leads** — every key page should funnel toward WhatsApp chat or a "Request a Design/Quote" form.
+3. **Showcase the work** — the portfolio is the product. Renders and completed builds need a gallery experience, not a buried image dump.
+4. **Communicate the full service range** — many visitors will only know Horizon for house designs seen on social media; the site should reveal the other five services (renovation, advisory, facility management, property trading) as upsell/cross-sell.
+5. **Own owned media** — social posts (like the "Welcome to July" recap) currently do the job a website should. The site becomes the permanent, searchable home for this content.
+
+---
+
+## 4. Target Audience
+
+- **Primary:** Nigerians (Abuja-based and diaspora) planning to build a personal home — mid-to-high income, plot of land already secured or being secured, looking for a design-and-build partner.
+- **Secondary:** Property investors/landlords needing renovation, facility management, or advisory services.
+- **Tertiary:** Corporate/institutional clients for larger builds (future growth vector).
 
 ---
 
@@ -77,58 +83,98 @@ npm run lint
 ## Typical Engagement Flow
 
 ```
-1. Brief intake        → client requirements captured and interrogated
-2. Concept design      → plans, space programme, preliminary layout
-3. Documentation       → architectural + structural drawing sets (Revit)
-4. Construction        → build execution
-5. Supervision         → site oversight through to completion
+Home
+├── About Us
+│   └── (Vision / Mission / Why Horizon / Team, optional)
+├── Services
+│   ├── Design
+│   ├── Construction
+│   ├── Renovation
+│   ├── Property Trading
+│   ├── Advisory Services
+│   └── Facility Management
+├── Projects / Portfolio
+│   ├── Filter: Residential | Commercial | Renovation
+│   ├── Filter: Completed | Ongoing | Design Concept
+│   └── Project Detail Page (template, reused per project)
+├── Get a Quote / Start a Project (lead form)
+├── Contact Us
+└── (Phase 2, not in this build) Blog / Articles
 ```
 
----
+**Footer (every page):** logo, short tagline, services quick-links, social icons (Instagram, Facebook, LinkedIn), WhatsApp number, physical/service-area info, copyright.
 
-## Positioning
-
-The firm's public voice pushes one argument consistently: a client is not paying for drawing hours, they are paying for the professional judgement behind them. That is a **value-based, not time-based**, positioning — worth preserving in any customer-facing copy.
-
-**Where it competes:** the Nigerian private-client market — landlords building student hostels for rental yield, and individuals building family homes. Both are cost-sensitive buyers who need certainty that the drawing will actually get built. The single-point-of-accountability design-and-build model is the firm's main answer to that.
+**Persistent element (all pages):** floating/sticky WhatsApp button.
 
 ---
 
-## Channels
+## 7. Page-by-Page Requirements
 
-| Channel  | Handle / Notes                                                          |
-| -------- | ----------------------------------------------------------------------- |
-| Facebook | `Horizon construct Firm` (Osogbo) — ~1,160 followers, primary shopfront |
-| LinkedIn | `Horizon Construct Firm` — project portfolio                            |
-| Website  | **None found**                                                          |
-| Hashtags | `#horizonconstructfirm` `#arcphil`                                      |
+### 7.1 Home
+
+- Hero: full-bleed image or slider of best renders/completed work, one strong headline (e.g., "Actualizing Your Brief, One Build at a Time"), primary CTA button → WhatsApp, secondary CTA → View Projects.
+- Services overview: 6 services as icon/card grid, each linking to its section/page.
+- Featured Projects: 3–6 best images, linking to full portfolio.
+- Trust strip: years active / projects delivered / states or cities covered (**pull real numbers from client**), social proof placeholder for future testimonials.
+- Social proof / social feed teaser (optional): recent Instagram posts.
+- Final CTA band: "Have a project in mind? Talk to us on WhatsApp."
+
+### 7.2 About Us
+
+- Company story, what "design and build" means in practice, the Arcphil relationship (pending clarification), values, and (optional) team/leadership.
+
+### 7.3 Services (1 page with 6 anchored sections — recommend anchored sections for Phase 1 to reduce build time)
+
+Each service needs: short description, what's included, and a relevant image. Design and Construction should lead, since they generate the most inbound interest.
+
+### 7.4 Projects / Portfolio
+
+- Grid/gallery of project thumbnails with category + status filters.
+- Each thumbnail opens a **Project Detail Page**: title (e.g., "4-Bedroom Design"), plot/size info, feature list (matches the style of the client's own social captions — e.g., Ante-Room, Visitor's Toilet, Living Room, Dining, Kitchen, Ensuite Bedrooms), image gallery/carousel, and a "Request a similar design" CTA.
+
+### 7.5 Get a Quote / Start a Project
+
+- Short form: name, phone/WhatsApp, email (optional), project type (Design / Construction / Renovation / Advisory / Facility Management / Property Trading), plot size or location, budget range (optional), message.
+- Submits to email and/or triggers a WhatsApp deep link pre-filled with the enquiry.
+
+### 7.6 Contact Us
+
+- WhatsApp click-to-chat (primary), phone, email, social links, service area/map (if a physical office exists — confirm with client), business hours.
 
 ---
 
-## Known Gaps
+## 8. Brand & Visual Direction (for UI/UX Designer)
 
-Fill these before this brief goes anywhere client-facing: **===============Developer should ask the CEO, if needed=====================**
+Source material: the client's own renders and their "Welcome to July" social graphic, which is the clearest existing expression of brand personality.
 
-- [ ] **Year founded** and legal/registration status (CAC number, ARCON/COREN registration)
-- [ ] **Principal(s)** — name, credentials, professional body membership
-- [ ] **Team size** and in-house vs. subcontracted capability
-- [ ] **Phone, email, physical office address**
-- [ ] **Project count and value** — how many completed, at what scale
-- [ ] **Named references** or client testimonials
-- [ ] **Service boundaries** — does it take commercial or institutional work, or residential only?
-- [ ] **Geographic reach** — Osun State only, or nationwide?
-- [ ] **Pricing model** — percentage fee, fixed fee, or design-and-build lump sum?
-- [ ] **Website / domain** — the largest missing asset
+- **Palette:** Charcoal/near-black as a dominant anchor, warm gold/mustard as the signature accent (used in the poster's headline gold and logo), white/off-white for content areas, a small red accent used sparingly for emphasis (as seen in "Welcome" script and safety vests). Avoid over-using red — it should stay a rare highlight, not a primary color.
+- **Typography:** Pair a confident, slightly editorial display font for headlines (echoing the bold condensed "JULY" treatment) with a clean, highly legible sans-serif for body copy and UI text. A script/handwritten accent font can be used sparingly for small flourishes (as in "Welcome to"), not for core navigation or body text.
+- **Photography-led design:** This is a visual trust business — renders and site-progress photos should be large, high-quality, and unfiltered by heavy UI chrome. Avoid stock photography; the client has real render and site-photo assets to build from.
+- **Tone:** Premium but grounded — "we build what we promise." Confident, not flashy. Professional safety/competence cues (hard hats, site photos) should sit alongside polished architectural renders to show both design capability and real execution.
+- **UI patterns to design:**
+  - Sticky WhatsApp CTA (mobile + desktop)
+  - Filterable project grid + lightbox/gallery viewer
+  - Service icon set (6 custom icons matching the brand mark's building/skyline motif)
+  - Mobile-first layouts — assume most traffic arrives from Instagram/Facebook/WhatsApp on mobile
+- **Logo:** existing gold skyline/building mark with "HORIZON CONSTRUCT FIRM" wordmark — designer should request the vector source file (AI/EPS/SVG) from the client rather than recreating from the JPEG.
 
 ---
 
-## Recommended Next Steps
+## 9. Technical Requirements (for Developer)
 
-1. **Ship a multi-page site.** Portfolio, services, contact form. The Facebook page is doing work a landing page should be doing.
-2. **Convert the hostel work into a named vertical.** Ten hostels in two years is a genuine specialism and the clearest differentiator available — lead with it rather than burying it among generic residential posts.
-3. **Publish 2–3 proper case studies.** Brief → constraint → design response → built outcome, with cost and programme where the client permits. Renders alone don't prove delivery.
-4. **Standardise the project post format** across channels so the portfolio reads as a body of work, not a feed.
-5. **Add credential proof.** Registration numbers and professional memberships reduce buyer risk in this market more than another render will.
+| Area               | Requirement                                                                                                                     |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------- |
+| **Platform**       | A fully custom-coded static site is only appropriate if the client confirms a developer will always be on retainer for updates. |
+| **Responsiveness** | Mobile-first; majority of traffic will arrive from social apps.                                                                 |
+| **Portfolio**      | Projects need to be structured content (title, category, status, images, feature l )                                            |
+
+| **Lead capture** | WhatsApp click-to-chat (`wa.me` links) throughout; quote form should email the team and/or generate a pre-filled WhatsApp message. |
+| **Performance** | Heavy use of large architectural images — implement image compression/optimization and lazy loading. |
+| **SEO** | On-page SEO for location + service keywords (e.g., "house design Abuja," "construction company FCT"), meta tags, alt text on all project images, sitemap.xml, structured data for LocalBusiness. |
+| **Analytics** | Google Analytics (or equivalent) + Meta Pixel for retargeting, since the client already runs social campaigns. |
+| **Hosting/Domain** | Confirm domain availability/ownership; recommend SSL by default. |
+| **Social integration** | Footer/header social links; optional Instagram feed embed on Home. |
+| **Accessibility** | Reasonable contrast on the dark charcoal + gold palette; alt text; keyboard-navigable menus. |
 
 ---
 
