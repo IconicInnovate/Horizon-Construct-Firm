@@ -1,5 +1,6 @@
-const API_BASE = import.meta.env.VITE_API_URL || '';
-
+const API_BASE = import.meta.env.PROD
+    ? 'https://horizon-api-tlvd.onrender.com'
+    : '';
 async function request(path, options) {
     const res = await fetch(`${API_BASE}${path}`, options);
     if (!res.ok) {
