@@ -53,38 +53,34 @@ Horizon Construct Firm positions itself as a full-lifecycle property partner, no
 
 ---
 
-## 5. Competitive Benchmarking
+## Run the Frontend
 
-Two Nigerian construction companies were reviewed to calibrate scope and tone. Horizon Construct Firm is a smaller, younger firm — the goal is **not** to copy these, but to borrow the structural patterns that build trust at any scale.
+The frontend is a Vite and React application located in the `frontend` directory.
 
-### Setraco Nigeria Limited
+```bash
+cd frontend
+npm install
+npm run dev
+```
 
-Large, 45+ year old civil engineering/infrastructure contractor (roads, bridges, national projects). Its credibility comes from scale, longevity, and government-grade project history — not something a younger firm can claim, so this is a pattern to **note, not imitate** directly. Takeaway: an "About/Legacy" narrative and a clear services list build trust even without Setraco's decades of history, if grounded in real completed work.
+Open the local URL shown in the terminal, usually `http://localhost:5173`.
 
-### Elalan Construction (elalan.com)
+To create and preview a production build:
 
-A more directly comparable pattern for Horizon Construct Firm:
+```bash
+npm run build
+npm run preview
+```
 
-- Clean hierarchy: **Home → About → Projects (filtered by Residential / Commercial / Industrial / Landmark) → Articles → Contact**
-- Rotating hero banners with short, evocative headlines over full-bleed project photography
-- A dedicated, filterable **project gallery** with individual project detail pages
-- **Client/partner logo strip** ("Our clients") for social proof
-- **Certifications shown visibly** (ISO badges)
-- **Articles/blog** used for local SEO (e.g., "Top construction companies in Abuja")
-- Consistent social + contact links in the header and footer
-- A group-of-companies section showing related service arms
+To run the linter:
 
-**What we're taking from this for Horizon Construct Firm:**
-
-- Filterable portfolio by category (start simple: Residential / Renovation / Ongoing / Completed)
-- Individual project pages, not just a flat image grid
-- A visible services breakdown (their 6 services, each with its own short page or accordion section)
-- Space reserved for future testimonials/client logos and SEO articles, even if Phase 1 launches without them
-- WhatsApp as the primary CTA (in place of Elalan's more corporate "Contact Us" form, matching how Horizon already generates leads on social media)
+```bash
+npm run lint
+```
 
 ---
 
-## 6. Sitemap (Phase 1 scope)
+## Typical Engagement Flow
 
 ```
 Home
@@ -182,57 +178,43 @@ Source material: the client's own renders and their "Welcome to July" social gra
 
 ---
 
-## 10. Content & Assets Provided by Client
+_Compiled from publicly available Facebook and LinkedIn material. Figures are as stated by the firm and have not been independently verified. Everything under "Known Gaps" is unconfirmed and should be supplied by the firm before publication._
 
-- [x] 2 architectural render images (exterior, front and angled views) — watermarked "Arcphil"
-- [x] 1 social recap graphic ("Welcome to July") showing logo, service list, and brand colors
-- [x] Service list (6 services)
-- [x] Sample project caption copy (feature-list style for a 4-bedroom design)
-- [x] WhatsApp number and social handles
+## Running the project locally
 
-### Still needed from client before design starts
+You need Python 3 and Node.js installed.
 
-- [ ] Vector logo file (SVG/AI/EPS)
-- [ ] Additional project photos/renders (aim for at least 3–5 projects to populate the portfolio at launch)
-- [ ] Real completed-project photos, if available (to distinguish "design concept" from "built" work)
-- [ ] Company history/founding story, years active, number of projects completed (for trust-building copy)
-- [ ] Physical office address / service area, if applicable
+### 1. Backend (Django)
 
----
+```powershell
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+pip install -r backend\requirements.txt
+cd backend
+python manage.py migrate
+python manage.py createsuperuser
+python manage.py runserver
+```
 
-## 11. Deliverables
+The API runs at http://127.0.0.1:8000/api/ and the admin at http://127.0.0.1:8000/admin/.
 
-**UI/UX Designer**
+Add services and projects in the admin. Until the database has content, the website shows built-in sample content.
 
-1. Moodboard / visual direction (based on Section 8)
-2. Low-fidelity wireframes — all Phase 1 pages, mobile + desktop
-3. High-fidelity mockups — all Phase 1 pages, mobile + desktop
-4. Component/style guide (colors, type scale, buttons, icons, card components)
-5. Clickable prototype for stakeholder review
+### 2. Frontend (React + Vite)
 
-**Developer**
+Open a second terminal:
 
-1. Fully built, responsive
-2. Working lead-capture: quote form + WhatsApp deep links
-3. SEO basics implemented (meta tags, sitemap, alt text, LocalBusiness schema)
-4. Analytics/pixel installed
-5. Staff-facing guide for adding/editing projects in the CMS
-6. Deployed to production with SSL on the client's domain
+```powershell
+cd frontend
+npm install
+npm run dev
+```
 
----
+The site runs at http://localhost:5173/. The Vite dev server forwards `/api` and `/media` requests to Django, so both servers must be running.
 
-## 12. Out of Scope (Phase 1)
+### API endpoints
 
-- Blog/Articles section (recommended for Phase 2, for SEO)
-- Client testimonial system
-- Multi-language support
-
----
-
-## 13. Open Questions for Client (to resolve before design freeze)
-
-1. How should "Arcphil" be represented on the site relative to the Horizon Construct Firm brand? CEO
-2. Do you have a physical office address, or do you operate project-by-project across sites? Osogbo, Osun State
-3. Can you share 3–5 more projects (renders and/or completed photos) so the portfolio doesn't launch with only one project? Check the CEO or company's social media account such as facebook, instagram or linkedin
-4. What years/numbers can we use to build credibility copy (years active, projects completed, cities served)? 4 years, project pictures on social media, Ile-ife, Lagos, Osogbo, Ibadan, Ikikire, Ilesha
-5. Do you have the logo as a vector file? Yes, uploaded to this repository in PNG
+- `GET /api/services/`
+- `GET /api/projects/` (optional `?category=` and `?status=` filters)
+- `POST /api/contact/`
+- `POST /api/quote-requests/`
