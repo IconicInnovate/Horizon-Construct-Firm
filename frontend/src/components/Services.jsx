@@ -1,15 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { servicesData } from '../data/content';
+import { getServices } from '../api/client';
 import { Compass, Building2, Home, HardHat } from 'lucide-react';
 
-const iconMap = {
-    Compass: Compass,
-    Building2: Building2,
-    Home: Home,
-    HardHat: HardHat,
-};
+const icons = [Compass, Building2, Home, HardHat];
 
 export default function Services() {
+    const [services, setServices] = useState(servicesData);
+
+    useEffect(() => {
+        getServices()
+            .then((data) => {
+                if (data.length > 0) setServices(data);
+            })
+            .catch(() => {});
+    }, []);
+
     return (
         <section id="services" className="py-20 bg-slate-100">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -19,8 +25,8 @@ export default function Services() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {servicesData.map((service) => {
-                        const Icon = iconMap[service.iconName] || Building2;
+                    {services.map((service, index) => {
+                        const Icon = icons[index % icons.length] || Building2;
                         return (
                             <div key={service.id} className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
                                 <div className="p-3 bg-sky-100 text-sky-600 w-fit rounded-lg mb-4">

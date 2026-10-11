@@ -1,13 +1,36 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { portfolioData } from '../data/content';
+import { getProjects } from '../api/client';
+
+const categories = ['All', 'Residential', 'Commercial', 'Renovation'];
+
+const capitalize = (text) => text.charAt(0).toUpperCase() + text.slice(1);
+
+function normalize(project) {
+    return {
+        id: project.id,
+        title: project.title,
+        category: capitalize(project.category),
+        description: project.description,
+        image: project.image || (project.images && project.images[0] && project.images[0].image) || '',
+    };
+}
 
 export default function Portfolio() {
     const [filter, setFilter] = useState('All');
-    const categories = ['All', 'Commercial', 'Residential', 'Industrial'];
+    const [projects, setProjects] = useState(portfolioData.map(normalize));
+
+    useEffect(() => {
+        getProjects()
+            .then((data) => {
+                if (data.length > 0) setProjects(data.map(normalize));
+            })
+            .catch(() => {});
+    }, []);
 
     const filteredProjects = filter === 'All'
-        ? portfolioData
-        : portfolioData.filter((item) => item.category === filter);
+        ? projects
+        : projects.filter((item) => item.category === filter);
 
     return (
         <section id="portfolio" className="py-20 bg-white">
@@ -17,14 +40,14 @@ export default function Portfolio() {
                         <h2 className="text-3xl font-bold text-slate-900">Featured Projects</h2>
                         <p className="text-slate-600 mt-2">Explore our portfolio of delivered infrastructure solutions.</p>
                     </div>
-                    <div className="flex gap-2 mt-6 md:mt-0">
+                    <div className="flex flex-wrap gap-2 mt-6 md:mt-0">
                         {categories.map((cat) => (
                             <button
                                 key={cat}
                                 onClick={() => setFilter(cat)}
                                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${filter === cat
-                                        ? 'bg-sky-500 text-white'
-                                        : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                                    ? 'bg-sky-500 text-white'
+                                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
                                     }`}
                             >
                                 {cat}
@@ -36,7 +59,11 @@ export default function Portfolio() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {filteredProjects.map((project) => (
                         <div key={project.id} className="rounded-xl overflow-hidden border border-slate-200 bg-white shadow-sm">
-                            <img src={project.image} alt={project.title} className="h-48 w-full object-cover" />
+                            {project.image ? (
+                                <img src={project.image} alt={project.title} className="h-48 w-full object-cover" />
+                            ) : (
+                                <div className="h-48 w-full bg-slate-200" />
+                            )}
                             <div className="p-5">
                                 <span className="text-xs font-semibold text-sky-600 uppercase tracking-wider">{project.category}</span>
                                 <h3 className="text-lg font-bold text-slate-900 mt-1">{project.title}</h3>
