@@ -1,6 +1,5 @@
 // frontend/src/components/Hero.jsx
 import React from 'react';
-import { ArrowRight, ShieldCheck } from 'lucide-react';
 
 /**
  * Hero Component
