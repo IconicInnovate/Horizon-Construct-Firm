@@ -1,3 +1,17 @@
-node_modules
-dist
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build Outputs
+dist/
+build/
+
+# Local Environment & Editor Files
 .env
+.env.local
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Backend Uploaded Media
+backend/media/
