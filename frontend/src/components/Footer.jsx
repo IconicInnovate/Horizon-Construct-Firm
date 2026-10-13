@@ -14,7 +14,7 @@ export default function Footer() {
                         alt="Horizon Construct Logo"
                         className="h-8 w-8 object-contain rounded-md bg-white/10 p-1"
                     />
-                    <span className="font-bold text-white text-lg tracking-tight">HORIZON CONSTRUCT</span>
+                    <span className="font-bold text-white text-lg tracking-tight">HORIZON CONSTRUCT FIRM</span>
                 </div>
 
                 {/* Copyright Notice */}

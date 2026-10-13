@@ -26,7 +26,7 @@ export const servicesData = [
     },
     {
         id: 'project-management',
-        title: 'Construction Management',
+        title: 'Ongoing Construction Projects',
         description: 'On-site supervision, supply chain optimization, and strict timeline delivery compliance.',
         iconName: 'HardHat'
     }
@@ -49,7 +49,7 @@ export const portfolioData = [
     },
     {
         id: 3,
-        title: 'Horizon Logistics Center',
+        title: 'Architectural Designs',
         category: 'Industrial',
         image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80',
         description: 'High-capacity storage and processing warehouse facility.'

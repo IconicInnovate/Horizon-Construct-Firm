@@ -18,7 +18,7 @@ export default function Navbar() {
                             alt="Horizon Construct Logo"
                             className="h-10 w-10 object-contain rounded-md bg-white/10 p-1"
                         />
-                        <span className="font-bold text-xl tracking-tight">HORIZON CONSTRUCT</span>
+                        <span className="font-bold text-xl tracking-tight">HORIZON CONSTRUCT FIRM</span>
                     </div>
 
                     {/* Desktop Nav */}
