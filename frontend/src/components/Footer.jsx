@@ -2,6 +2,10 @@
 import React from 'react';
 import logo from '../assets/Horizon.png';
 
+/**
+ * Footer Component
+ * Renders copyright info and company branding at the bottom of all pages.
+ */
 export default function Footer() {
     return (
         <footer className="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
@@ -11,7 +15,7 @@ export default function Footer() {
                 <div className="flex items-center gap-3">
                     <img
                         src={logo}
-                        alt="Horizon Construct Logo"
+                        alt="Horizon Construct Firm Logo"
                         className="h-8 w-8 object-contain rounded-md bg-white/10 p-1"
                     />
                     <span className="font-bold text-white text-lg tracking-tight">HORIZON CONSTRUCT FIRM</span>
