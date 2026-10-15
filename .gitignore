@@ -1,27 +1,17 @@
-# Virtual environment
-venv/
+# Dependencies
+node_modules/
+.pnpm-store/
 
-# Python cache
-__pycache__/
-*.py[cod]
-*$py.class
+# Build Outputs
+dist/
+build/
 
-# Django
-db.sqlite3
-
-# Environment variables
+# Local Environment & Editor Files
 .env
-
-# VS Code
+.env.local
 .vscode/
-
-# OS files
 .DS_Store
 Thumbs.db
 
-# Node
-node_modules/
-dist/
-
-# Uploaded files
+# Backend Uploaded Media
 backend/media/
